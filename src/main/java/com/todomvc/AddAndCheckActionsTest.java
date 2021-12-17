@@ -36,9 +36,8 @@ public class AddAndCheckActionsTest {
     public void todoTestCase() throws InterruptedException {
         driver.get("https://todomvc.com");
         choosePlatform("Backbone.js");
-        addTodo("Read a book");
-        addTodo("Cook dinner");
-        addTodo("write code");
+        addTodo("Read about selenium");
+        addTodo("Write code");
         removeTodo();
         Thread.sleep(1000);
 
@@ -46,10 +45,12 @@ public class AddAndCheckActionsTest {
 
     }
     @ParameterizedTest
-    @ValueSource(strings = {"Backbone.js",
+    @ValueSource(strings = {
+            "Backbone.js",
             "AngularJS",
             "Dojo",
-            "React"})
+            "React"
+    })
     public void todosTestCase(String platform) {
         driver.get("https://todomvc.com");
         choosePlatform(platform);
